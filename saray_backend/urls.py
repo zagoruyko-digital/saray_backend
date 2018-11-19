@@ -7,8 +7,8 @@ from main.views import login
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    path('login', login),
-    #url(r'^api/v0/', include('api_v0.urls'))
+    path('^login/', login),
+    url(r'^api/v0/', include('api_v0.urls'))
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

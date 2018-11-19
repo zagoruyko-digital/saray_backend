@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from main.models import Manager
+from main.models import Manager, News
 
 class ManagerInfoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -18,4 +18,16 @@ class ManagerSerializer(serializers.ModelSerializer):
         fields = [
             'user',
             'image'
+        ]
+
+class NewsDetailSerializer(serializers.ModelSerializer):
+    manager = ManagerSerializer()
+
+    class Meta:
+        model = News
+        fields = [
+            'manager',
+            'title',
+            'body',
+            'cover'
         ]
