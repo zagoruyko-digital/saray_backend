@@ -27,6 +27,7 @@ class NewsDetailSerializer(serializers.ModelSerializer):
         model = News
         fields = [
             'manager',
+            'id',
             'title',
             'body',
             'cover'
