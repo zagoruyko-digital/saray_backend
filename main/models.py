@@ -9,4 +9,4 @@ class News(models.Model):
     manager = models.ForeignKey('Manager', on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     body = models.TextField()
-    cover = models.FileField(upload_to='./public_img')
+    cover = models.FileField()
