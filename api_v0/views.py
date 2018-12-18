@@ -22,6 +22,15 @@ class NewsViewSet(viewsets.ReadOnlyModelViewSet):
            return NewsDetailSerializer
         return NewsDetailSerializer
 
+@permission_classes((AllowAny,))
+class CategoryqViewSet(viewsets.ReadOnlyModelViewSet):
+   queryset = Categoryq.objects.all()
+
+   def get_serializer_class(self):
+        if self.action == 'list':
+           return CategoryqSerializer
+        return CategoryqSerializer
+
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
    serializer_class = ManagerInfoSerializer
 

@@ -10,3 +10,9 @@ class News(models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField()
     cover = models.FileField()
+
+class Categoryq(models.Model):
+    category_name = models.CharField(max_length=255, default='Импульсный свет')
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    cover = models.FileField()
